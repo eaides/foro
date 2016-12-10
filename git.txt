@@ -1,0 +1,163 @@
+--- Homestead -----------------------------------------------------------------------------
+ (https://edisonthk.wordpress.com/2014/08/28/quick-guide-on-installation-laravel-homestead-in-windows-8-2/)
+ - must convert with puttygen.exe the .ssh/id_rsa private key to .ssh/id-rsa.ppk -
+ - connect to putty - 127.0.0.1 port 2222 with ssh/auth and the ppk key; user/password is vagrant/vagrant
+
+ --- Bower yo etc ----------------------------------------------------------------------
+ if not installed yet:
+   sudo npm cache clean -f
+      sudo npm install -g n
+      sudo n stable
+   node -v
+   sudo npm install -g yo bower grunt-cli gulp generator-karma
+      yo --version
+      bower --version
+      grunt --version
+   sudo npm install -g generator-langular
+   sudo npm install -g generator-angular
+
+Update npm itself:
+   node -v
+   sudo npm install npm -g           or
+   sudo npm install --global npm@latest
+
+Updating global packages:
+   sudo npm install -g <package>
+   sudo npm update -g
+
+To find out which packages need to be updated:
+   sudo npm outdated -g --depth=0
+
+   sudo npm install (on local machine) or
+     sudo npm install --no-bin-links (in homestead)
+   sudo npm update
+   sudo npm install -g gulp
+   sudo npm install -g notify-send
+
+ --- Deploy ----------------------------------------------------------------------------
+ 1) local, add the virtual host to /etc/hosts or %systemroot%\system32\drivers\etc\hosts
+ e.g.    192.168.10.10    foro.app
+
+ -if needed: homestead update -
+ 2) homestead up
+ 3) homestead ssh
+ 4) cd /home/vagrant/Code
+
+ note: - the location for nginx serve definitions is: /etc/nginx/sites-available (/etc/nginx/sites-enabled)
+       - restart manually nginx: service nginx restart
+                                 service php5-fpm restart
+
+Deploy a new laravel project in Homestead:
+5) composer create-project laravel/laravel foro "5.3.*"
+    o
+   laravel new foro
+6) serve foro.app /home/vagrant/Code/foro/public
+7) create a database: mysql -uhomestead -psecret
+8)    CREATE DATABASE foro;
+	  CREATE DATABASE foro_tests;
+9)    QUIT;
+10) create the .env file, connection will be:
+  DB_HOST=localhost
+  DB_DATABASE=foro
+  DB_DATABASE_TESTS=foro_tests
+  DB_USERNAME=homestead
+  DB_PASSWORD=secret
+11) php artisan migrate
+    php artisan migrate --database mysql_tests
+12) php artisan db:seed
+13) (1st check with node -v) and "sudo npm install" -install dependencies defines on package.json-
+0 14) sudo npm update -see at the end how to check/update global modules)
+
+Deploy an existing (local) project in Homestead:
+5) verify that the folder (with same name as local) exists: ls -ld foro
+6) serve foro.app /home/vagrant/Code/foro/public
+7) create a database: mysql -uhomestead -psecret
+8)    CREATE DATABASE foro;
+      CREATE DATABASE foro_tests;
+9)    QUIT;
+10) copy/modify the .env file from local, change the connection's settings as:
+  DB_HOST=localhost
+  DB_DATABASE=foro
+  DB_DATABASE_TESTS=foro_tests
+  DB_USERNAME=homestead
+  DB_PASSWORD=secret
+11) php artisan migrate
+12) php artisan db:seed
+13) (1st check with node -v) and "sudo npm install" -install dependencies defines on package.json-
+0 14) sudo npm update -see at the end how to check/update global modules)
+
+Execute Both:
+http://foro.app
+--- add new package ----------------------------------------------------------------------
+https://packagist.org    (packages for php)
+http://packalyst.com/    (packages for laravel)
+
+1) homestead up
+2) homestead ssh
+3) cd /home/vagrant/Code/foro
+4) eg "fzaninotto/faker": "dansmith/laravel5-foundation": "0.2.*" => composer require dansmith/laravel5-foundation:0.2.*   (without " and no spaces)
+
+--- xdebug -------------------------------------------------------------------------------
+https://laracasts.com/forum/?p=1648-phpstorm-homestead-xdebug/0
+  firefox: https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/
+  chrome : https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc
+
+sudo nano /etc/php5/fpm/conf.d/20-xdebug.ini
+add the entries:
+
+   zend_extension=xdebug.so
+ xdebug.idekey="phpstorm"
+   xdebug.remote_enable = 1
+   xdebug.remote_connect_back = 1
+   xdebug.remote_port = 9000
+ xdebug.max_nesting_level = 300
+ xdebug.scream=0
+ xdebug.cli_color=1
+ xdebug.show_local_vars=1
+
+sudo service php5-fpm restart
+in the firefox add-on, change the IDE key to 'phpstorm'
+
+sudo nano /etc/nginx/fastcgi_params
+add or modify:
+fastcgi_read_timeout 600; # Set fairly high for debugging
+
+sudo /etc/init.d/nginx restart
+
+--- GIT -----------------------------------------------------------------------------------
+
+
+git config --global user.name "Ernesto Aides"
+git config --global user.email eaides@estudio89.co.il
+git config --global color.ui true
+git config --list
+
+git init
+git status
+git add <filename> || git add .       note: modified binaries files must be newly added
+git commit -m “initial commit”
+
+git remote add origin https://eaides@bitbucket.org/eaides/<repository_name>.git
+
+git add contributors.txt
+git commit -m 'Initial commit with contributors'
+it push -u origin --all # pushes up the repo and its refs for the first time
+git push -u origin --tags # pushes up any tags
+
+git add <filename>|<folder>
+git commit -m 'new commit'
+git tag -a 1.7 -m "Section 1 Lecture 7"     if we want, can add a tag
+git push -u origin 1.7                      push the new tag
+git push -u origin master                   from local repo to remote repository
+
+git pull origin master               from remote repository to local repo
+
+git rm file1.txt
+git rm -r folder
+git commit -m "remove file1.txt/folder"
+
+clone repository: git clone https://eaides@bitbucket.org/eaides/<repository_name>.git
+
+if you want to change from github to bitbucket, only need to import the repo into bitbucket,
+then edit the <project>/.git/config file and change the url= to (like): https://eaides@bitbucket.org/eaides/teachme.git
+
