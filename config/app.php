@@ -168,6 +168,8 @@ return [
          */
         Styde\Html\HtmlServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Themsaid\Langman\LangmanServiceProvider::class,
         //
 
         /*
@@ -229,6 +231,8 @@ return [
 
         'Access' => Styde\Html\Facades\Access::class,
         'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'DBAL' => Nayjest\LaravelDoctrineDBAL\Facade::class,
 
     ],
 
