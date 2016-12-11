@@ -71,7 +71,7 @@ class Handler extends ExceptionHandler
      */
     protected function convertExceptionToResponse(Exception $e)
     {
-        if (env('APP_USE_WHOOPS', false) && config('app.debug')) {
+        if (config('app.use_whoops') && config('app.debug')) {
             $whoops = new \Whoops\Run;
             $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
 

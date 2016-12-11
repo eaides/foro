@@ -124,6 +124,8 @@ return [
 
     'log_level' => env('APP_LOG_LEVEL', 'debug'),
 
+    'use_whoops' => env('APP_USE_WHOOPS', false),
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
