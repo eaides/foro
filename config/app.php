@@ -184,6 +184,10 @@ return [
         Barryvdh\Snappy\ServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Cornford\Googlmapper\MapperServiceProvider::class,
+        Roumen\Sitemap\SitemapServiceProvider::class,
+        Jenssegers\Agent\AgentServiceProvider::class,
+        Jrean\UserVerification\UserVerificationServiceProvider::class,
+        Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
         //
 
         /*
@@ -254,7 +258,11 @@ return [
         'SnappyImage'   => Barryvdh\Snappy\Facades\SnappyImage::class,
         'Image'         => Intervention\Image\Facades\Image::class,
         'Mapper'        => Cornford\Googlmapper\Facades\MapperFacade::class,
+        'Agent'         => Jenssegers\Agent\Facades\Agent::class,
+        'JWTAuth'       => Tymon\JWTAuth\Facades\JWTAuth::class,
+        'JWTFactory'    => Tymon\JWTAuth\Facades\JWTFactory::class,
 
+        'UserVerification'          => Jrean\UserVerification\Facades\UserVerification::class,
         'Boostrap_Accordion'        => Bootstrapper\Facades\Accordion::class,
         'Boostrap_Alert'            => Bootstrapper\Facades\Alert::class,
         'Boostrap_Badge'            => Bootstrapper\Facades\Badge::class,
