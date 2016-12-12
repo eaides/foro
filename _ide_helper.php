@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.3.26 on 2016-12-11.
+ * Generated for Laravel 5.3.26 on 2016-12-12.
  *
  * @author Barry vd. Heuvel <barryvdh@gmail.com>
  * @see https://github.com/barryvdh/laravel-ide-helper
@@ -12409,6 +12409,3689 @@ namespace {
         public static function offsetUnset($key){
             //Method inherited from \DebugBar\DebugBar            
             return \Barryvdh\Debugbar\LaravelDebugbar::offsetUnset($key);
+        }
+        
+    }
+
+
+    class Recaptcha extends \Greggilbert\Recaptcha\Facades\Recaptcha{
+        
+        /**
+         * Render the recaptcha
+         *
+         * @param array $options
+         * @return \Greggilbert\Recaptcha\view 
+         * @static 
+         */
+        public static function render($options = array()){
+            return \Greggilbert\Recaptcha\Recaptcha::render($options);
+        }
+        
+    }
+
+
+    class Gravatar extends \Creativeorange\Gravatar\Facades\Gravatar{
+        
+        /**
+         * Override the default image fallback set in the config.
+         * 
+         * Can either be a public URL to an image or a valid themed image.
+         * For more info, visit http://en.gravatar.com/site/implement/images/#default-image
+         *
+         * @param string $fallback
+         * @return $this 
+         * @static 
+         */
+        public static function fallback($fallback){
+            return \Creativeorange\Gravatar\Gravatar::fallback($fallback);
+        }
+        
+        /**
+         * Check if Gravatar has an avatar for the given email address
+         *
+         * @param $email
+         * @return bool 
+         * @throws InvalidEmailException
+         * @static 
+         */
+        public static function exists($email){
+            return \Creativeorange\Gravatar\Gravatar::exists($email);
+        }
+        
+        /**
+         * Get the gravatar url
+         *
+         * @param $email
+         * @param string $configGroup
+         * @return string 
+         * @throws InvalidEmailException
+         * @static 
+         */
+        public static function get($email, $configGroup = 'default'){
+            return \Creativeorange\Gravatar\Gravatar::get($email, $configGroup);
+        }
+        
+    }
+
+
+    class Boostrap_Accordion extends \Bootstrapper\Facades\Accordion{
+        
+        /**
+         * Name the accordion
+         *
+         * @param $name The name of the accordion
+         * @return $this 
+         * @static 
+         */
+        public static function named($name){
+            return \Bootstrapper\Accordion::named($name);
+        }
+        
+        /**
+         * Add the contents for the accordion. Should be an array of arrays
+         * <strong>Expected Keys</strong>:
+         * <ul>
+         * <li>title</li>
+         * <li>contents</li>
+         * <li>attributes (optional)</li>
+         * </ul>
+         *
+         * @param array $contents
+         * @return $this 
+         * @static 
+         */
+        public static function withContents($contents){
+            return \Bootstrapper\Accordion::withContents($contents);
+        }
+        
+        /**
+         * Sets which panel should be opened. Numbering begins from 0.
+         *
+         * @param $integer int
+         * @return $this 
+         * @static 
+         */
+        public static function open($integer){
+            return \Bootstrapper\Accordion::open($integer);
+        }
+        
+        /**
+         * Renders the accordion
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Accordion::render();
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Accordion::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Accordion::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Alert extends \Bootstrapper\Facades\Alert{
+        
+        /**
+         * Sets the type of the alert. The alert prefix is not assumed.
+         *
+         * @param $type string
+         * @return $this 
+         * @static 
+         */
+        public static function setType($type){
+            return \Bootstrapper\Alert::setType($type);
+        }
+        
+        /**
+         * Renders the alert
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Alert::render();
+        }
+        
+        /**
+         * Creates an info alert box
+         *
+         * @param string $contents
+         * @return $this 
+         * @static 
+         */
+        public static function info($contents = ''){
+            return \Bootstrapper\Alert::info($contents);
+        }
+        
+        /**
+         * Creates a success alert box
+         *
+         * @param string $contents
+         * @return $this 
+         * @static 
+         */
+        public static function success($contents = ''){
+            return \Bootstrapper\Alert::success($contents);
+        }
+        
+        /**
+         * Creates a warning alert box
+         *
+         * @param string $contents
+         * @return $this 
+         * @static 
+         */
+        public static function warning($contents = ''){
+            return \Bootstrapper\Alert::warning($contents);
+        }
+        
+        /**
+         * Creates a danger alert box
+         *
+         * @param string $contents
+         * @return $this 
+         * @static 
+         */
+        public static function danger($contents = ''){
+            return \Bootstrapper\Alert::danger($contents);
+        }
+        
+        /**
+         * Sets the contents of the alert box
+         *
+         * @param $contents
+         * @return $this 
+         * @static 
+         */
+        public static function withContents($contents){
+            return \Bootstrapper\Alert::withContents($contents);
+        }
+        
+        /**
+         * Adds a close button with the given text
+         *
+         * @param string $closer
+         * @return $this 
+         * @static 
+         */
+        public static function close($closer = '&times;'){
+            return \Bootstrapper\Alert::close($closer);
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Alert::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Alert::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Badge extends \Bootstrapper\Facades\Badge{
+        
+        /**
+         * Renders the badge
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Badge::render();
+        }
+        
+        /**
+         * Adds contents to the badge
+         *
+         * @param $contents
+         * @return $this 
+         * @static 
+         */
+        public static function withContents($contents){
+            return \Bootstrapper\Badge::withContents($contents);
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Badge::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Badge::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Breadcrumb extends \Bootstrapper\Facades\Breadcrumb{
+        
+        /**
+         * Renders the breadcrumb
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Breadcrumb::render();
+        }
+        
+        /**
+         * Set the links for the breadcrumbs. Expects an array of the following:
+         * <ul>
+         * <li>An array, with keys <code>link</code> and <code>text</code></li>
+         * <li>A string for the active link
+         * </ul>
+         *
+         * @param $links array
+         * @return $this 
+         * @static 
+         */
+        public static function withLinks($links){
+            return \Bootstrapper\Breadcrumb::withLinks($links);
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Breadcrumb::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Breadcrumb::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Button extends \Bootstrapper\Facades\Button{
+        
+        /**
+         * Sets the type of the button
+         *
+         * @param $type string The new type of the button. Assumes that the btn-
+         *              prefix is there
+         * @return $this 
+         * @static 
+         */
+        public static function setType($type){
+            return \Bootstrapper\Button::setType($type);
+        }
+        
+        /**
+         * Sets the size of the button
+         *
+         * @param $size string The new size of the button. Assumes that the btn-
+         *              prefix is there
+         * @return $this 
+         * @static 
+         */
+        public static function setSize($size){
+            return \Bootstrapper\Button::setSize($size);
+        }
+        
+        /**
+         * Renders the button
+         *
+         * @return string as a string
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Button::render();
+        }
+        
+        /**
+         * Creates a button with class .btn-default and the given contents
+         *
+         * @param string $contents The contents of the button The contents of the
+         *                         button
+         * @return \Bootstrapper\Button 
+         * @static 
+         */
+        public static function normal($contents = ''){
+            return \Bootstrapper\Button::normal($contents);
+        }
+        
+        /**
+         * Creates an button with class .btn-primary and the given contents
+         *
+         * @param string $contents The contents of the button The contents of the
+         *                         button
+         * @return \Bootstrapper\Button 
+         * @static 
+         */
+        public static function primary($contents = ''){
+            return \Bootstrapper\Button::primary($contents);
+        }
+        
+        /**
+         * Creates an button with class .btn-success and the given contents
+         *
+         * @param string $contents The contents of the button The contents of the
+         *                         button
+         * @return \Bootstrapper\Button 
+         * @static 
+         */
+        public static function success($contents = ''){
+            return \Bootstrapper\Button::success($contents);
+        }
+        
+        /**
+         * Creates an button with class .btn-info and the given contents
+         *
+         * @param string $contents The contents of the button
+         * @return \Bootstrapper\Button 
+         * @static 
+         */
+        public static function info($contents = ''){
+            return \Bootstrapper\Button::info($contents);
+        }
+        
+        /**
+         * Creates an button with class .btn-warning and the given contents
+         *
+         * @param string $contents The contents of the button
+         * @return \Bootstrapper\Button 
+         * @static 
+         */
+        public static function warning($contents = ''){
+            return \Bootstrapper\Button::warning($contents);
+        }
+        
+        /**
+         * Creates an button with class .btn-danger and the given contents
+         *
+         * @param string $contents The contents of the button
+         * @return \Bootstrapper\Button 
+         * @static 
+         */
+        public static function danger($contents = ''){
+            return \Bootstrapper\Button::danger($contents);
+        }
+        
+        /**
+         * Creates an button with class .btn-link and the given contents
+         *
+         * @param string $contents The contents of the button
+         * @return \Bootstrapper\Button 
+         * @static 
+         */
+        public static function link($contents = ''){
+            return \Bootstrapper\Button::link($contents);
+        }
+        
+        /**
+         * Sets the button to be a block button
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function block(){
+            return \Bootstrapper\Button::block();
+        }
+        
+        /**
+         * Makes the button a submit button
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function submit(){
+            return \Bootstrapper\Button::submit();
+        }
+        
+        /**
+         * Makes the button a reset button
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function reset(){
+            return \Bootstrapper\Button::reset();
+        }
+        
+        /**
+         * Sets the value of the button
+         *
+         * @param $value string The new value of the button
+         * @return $this 
+         * @static 
+         */
+        public static function withValue($value = ''){
+            return \Bootstrapper\Button::withValue($value);
+        }
+        
+        /**
+         * Sets the button to be a large button
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function large(){
+            return \Bootstrapper\Button::large();
+        }
+        
+        /**
+         * Sets the button to be a small button
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function small(){
+            return \Bootstrapper\Button::small();
+        }
+        
+        /**
+         * Sets the button to be an extra small button
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function extraSmall(){
+            return \Bootstrapper\Button::extraSmall();
+        }
+        
+        /**
+         * More descriptive version of withAttributes
+         *
+         * @see withAttributes
+         * @param array $attributes The attributes to add
+         * @return $this 
+         * @static 
+         */
+        public static function addAttributes($attributes){
+            return \Bootstrapper\Button::addAttributes($attributes);
+        }
+        
+        /**
+         * Disables the button
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function disable(){
+            return \Bootstrapper\Button::disable();
+        }
+        
+        /**
+         * Adds an icon to the button
+         *
+         * @param $icon string The icon to add
+         * @param bool $append Whether the icon should be added after the text or
+         *                     before
+         * @return $this 
+         * @static 
+         */
+        public static function withIcon($icon, $append = true){
+            return \Bootstrapper\Button::withIcon($icon, $append);
+        }
+        
+        /**
+         * Descriptive version of withIcon(). Adds the icon after the text
+         *
+         * @see withIcon
+         * @param $icon string The icon to add
+         * @return $this 
+         * @static 
+         */
+        public static function appendIcon($icon){
+            return \Bootstrapper\Button::appendIcon($icon);
+        }
+        
+        /**
+         * Descriptive version of withIcon(). Adds the icon before the text
+         *
+         * @param $icon string The icon to add
+         * @return $this 
+         * @static 
+         */
+        public static function prependIcon($icon){
+            return \Bootstrapper\Button::prependIcon($icon);
+        }
+        
+        /**
+         * Adds a url to the button, making it a link. This will generate an <a> tag
+         *
+         * @param $url string The url to link to
+         * @return $this 
+         * @static 
+         */
+        public static function asLinkTo($url){
+            return \Bootstrapper\Button::asLinkTo($url);
+        }
+        
+        /**
+         * Get the type of the button
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getType(){
+            return \Bootstrapper\Button::getType();
+        }
+        
+        /**
+         * Get the value of the button. Does not return the value with the icon
+         *
+         * @return string 
+         * @static 
+         */
+        public static function getValue(){
+            return \Bootstrapper\Button::getValue();
+        }
+        
+        /**
+         * Gets the attributes of the button
+         *
+         * @return array 
+         * @static 
+         */
+        public static function getAttributes(){
+            return \Bootstrapper\Button::getAttributes();
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Button::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Button::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_ButtonGroup extends \Bootstrapper\Facades\ButtonGroup{
+        
+        /**
+         * Renders the button group
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\ButtonGroup::render();
+        }
+        
+        /**
+         * Sets the size of the button group
+         *
+         * @param $size
+         * @static 
+         */
+        public static function setSize($size){
+            return \Bootstrapper\ButtonGroup::setSize($size);
+        }
+        
+        /**
+         * Sets the button group to be large
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function large(){
+            return \Bootstrapper\ButtonGroup::large();
+        }
+        
+        /**
+         * Sets the button group to be small
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function small(){
+            return \Bootstrapper\ButtonGroup::small();
+        }
+        
+        /**
+         * Sets the button group to be extra small
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function extraSmall(){
+            return \Bootstrapper\ButtonGroup::extraSmall();
+        }
+        
+        /**
+         * Sets the button group to be radio
+         *
+         * @param array $contents
+         * @return $this 
+         * @static 
+         */
+        public static function radio($contents){
+            return \Bootstrapper\ButtonGroup::radio($contents);
+        }
+        
+        /**
+         * Sets the button group to be a checkbox
+         *
+         * @param array $contents
+         * @return $this 
+         * @static 
+         */
+        public static function checkbox($contents){
+            return \Bootstrapper\ButtonGroup::checkbox($contents);
+        }
+        
+        /**
+         * Sets the contents of the button group
+         *
+         * @param array $contents
+         * @return $this 
+         * @static 
+         */
+        public static function withContents($contents){
+            return \Bootstrapper\ButtonGroup::withContents($contents);
+        }
+        
+        /**
+         * Sets the button group to be vertical
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function vertical(){
+            return \Bootstrapper\ButtonGroup::vertical();
+        }
+        
+        /**
+         * Sets the type of the button group
+         *
+         * @param $type
+         * @return $this 
+         * @static 
+         */
+        public static function asType($type){
+            return \Bootstrapper\ButtonGroup::asType($type);
+        }
+        
+        /**
+         * Renders the contents of the button group
+         *
+         * @return string 
+         * @throws ButtonGroupException if a string should be activated
+         * @static 
+         */
+        public static function renderContents(){
+            return \Bootstrapper\ButtonGroup::renderContents();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function links($contents = array()){
+            return \Bootstrapper\ButtonGroup::links($contents);
+        }
+        
+        /**
+         * Sets a link to be activated
+         *
+         * @param $toActivate
+         * @return $this 
+         * @static 
+         */
+        public static function activate($toActivate){
+            return \Bootstrapper\ButtonGroup::activate($toActivate);
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\ButtonGroup::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\ButtonGroup::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Carousel extends \Bootstrapper\Facades\Carousel{
+        
+        /**
+         * Names the carousel
+         *
+         * @param string $name The name of the carousel
+         * @return $this 
+         * @static 
+         */
+        public static function named($name){
+            return \Bootstrapper\Carousel::named($name);
+        }
+        
+        /**
+         * Set the control icons or text
+         *
+         * @param string $previousButton Left arrorw, previous text
+         * @param string $nextButton right arrow, next string
+         * @return \Bootstrapper\this 
+         * @static 
+         */
+        public static function withControls($previousButton, $nextButton){
+            return \Bootstrapper\Carousel::withControls($previousButton, $nextButton);
+        }
+        
+        /**
+         * Sets the contents of the carousel
+         *
+         * @param array $contents The new contents. Should be an array of arrays,
+         *                        with the inner keys being "image", "alt" and
+         *                        (optionally) "caption"
+         * @return $this 
+         * @static 
+         */
+        public static function withContents($contents){
+            return \Bootstrapper\Carousel::withContents($contents);
+        }
+        
+        /**
+         * Renders the carousel
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Carousel::render();
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Carousel::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Carousel::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_ControlGroup extends \Bootstrapper\Facades\ControlGroup{
+        
+        /**
+         * Renders the control group
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\ControlGroup::render();
+        }
+        
+        /**
+         * Set the attributes of the control group
+         *
+         * @param array $attributes The attributes array
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            return \Bootstrapper\ControlGroup::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the contents to the control group
+         *
+         * @param string $contents The contents of the control group
+         * @param null $controlSize |int The size of the form control
+         * @return $this 
+         * @throws ControlGroupException If is $controlSize set and not between 1
+         *                            and 12
+         * @static 
+         */
+        public static function withContents($contents, $controlSize = null){
+            return \Bootstrapper\ControlGroup::withContents($contents, $controlSize);
+        }
+        
+        /**
+         * Sets the label of the control group
+         *
+         * @param string $label The label
+         * @param null $labelSize |int The size of the label
+         * @return $this 
+         * @throws ControlGroupException If is $labelSize set and not between 1
+         *                          and 12
+         * @static 
+         */
+        public static function withLabel($label, $labelSize = null){
+            return \Bootstrapper\ControlGroup::withLabel($label, $labelSize);
+        }
+        
+        /**
+         * Adds a help block
+         *
+         * @param string $help The help information
+         * @return $this 
+         * @static 
+         */
+        public static function withHelp($help){
+            return \Bootstrapper\ControlGroup::withHelp($help);
+        }
+        
+        /**
+         * Adds validation error if occured
+         *
+         * @param string $name
+         * @return $this 
+         * @static 
+         */
+        public static function withValidation($name){
+            return \Bootstrapper\ControlGroup::withValidation($name);
+        }
+        
+        /**
+         * Generates a full control group with a label, control and help block
+         *
+         * @param string $label The label
+         * @param string $control The form control
+         * @param string $help The help text
+         * @param int $labelSize The size of the label
+         * @param int $controlSize The size of the form control
+         * @return $this 
+         * @throws ControlGroupException if the sizes are invalid
+         * @static 
+         */
+        public static function generate($label, $control, $help = null, $labelSize = null, $controlSize = null){
+            return \Bootstrapper\ControlGroup::generate($label, $control, $help, $labelSize, $controlSize);
+        }
+        
+        /**
+         * Renders the label
+         *
+         * @return string 
+         * @static 
+         */
+        public static function renderLabel(){
+            return \Bootstrapper\ControlGroup::renderLabel();
+        }
+        
+        /**
+         * Creates the div to surround the form control
+         *
+         * @return string 
+         * @static 
+         */
+        public static function createControlDiv(){
+            return \Bootstrapper\ControlGroup::createControlDiv();
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\ControlGroup::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_DropdownButton extends \Bootstrapper\Facades\DropdownButton{
+        
+        /**
+         * Set the label of the button
+         *
+         * @param $label
+         * @return $this 
+         * @static 
+         */
+        public static function labelled($label){
+            return \Bootstrapper\DropdownButton::labelled($label);
+        }
+        
+        /**
+         * Set the contents of the button
+         *
+         * @param array $contents The contents of the dropdown button
+         * @return $this 
+         * @static 
+         */
+        public static function withContents($contents){
+            return \Bootstrapper\DropdownButton::withContents($contents);
+        }
+        
+        /**
+         * Sets the type of the button
+         *
+         * @param string $type The type of the button
+         * @return $this 
+         * @static 
+         */
+        public static function setType($type){
+            return \Bootstrapper\DropdownButton::setType($type);
+        }
+        
+        /**
+         * Sets the size of the button
+         *
+         * @param string $size The size of the button
+         * @return $this 
+         * @static 
+         */
+        public static function setSize($size){
+            return \Bootstrapper\DropdownButton::setSize($size);
+        }
+        
+        /**
+         * Splits the button
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function split(){
+            return \Bootstrapper\DropdownButton::split();
+        }
+        
+        /**
+         * Sets the button to drop up
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function dropup(){
+            return \Bootstrapper\DropdownButton::dropup();
+        }
+        
+        /**
+         * Creates a normal dropdown button
+         *
+         * @param string $label The label
+         * @return $this 
+         * @static 
+         */
+        public static function normal($label = ''){
+            return \Bootstrapper\DropdownButton::normal($label);
+        }
+        
+        /**
+         * Creates a primary dropdown button
+         *
+         * @param string $label The label
+         * @return $this 
+         * @static 
+         */
+        public static function primary($label = ''){
+            return \Bootstrapper\DropdownButton::primary($label);
+        }
+        
+        /**
+         * Creates a danger dropdown button
+         *
+         * @param string $label The label
+         * @return $this 
+         * @static 
+         */
+        public static function danger($label = ''){
+            return \Bootstrapper\DropdownButton::danger($label);
+        }
+        
+        /**
+         * Creates a warning dropdown button
+         *
+         * @param string $label The label
+         * @return $this 
+         * @static 
+         */
+        public static function warning($label = ''){
+            return \Bootstrapper\DropdownButton::warning($label);
+        }
+        
+        /**
+         * Creates a success dropdown button
+         *
+         * @param string $label The label
+         * @return $this 
+         * @static 
+         */
+        public static function success($label = ''){
+            return \Bootstrapper\DropdownButton::success($label);
+        }
+        
+        /**
+         * Creates a info dropdown button
+         *
+         * @param string $label The label
+         * @return $this 
+         * @static 
+         */
+        public static function info($label = ''){
+            return \Bootstrapper\DropdownButton::info($label);
+        }
+        
+        /**
+         * Sets the size to large
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function large(){
+            return \Bootstrapper\DropdownButton::large();
+        }
+        
+        /**
+         * Sets the size to small
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function small(){
+            return \Bootstrapper\DropdownButton::small();
+        }
+        
+        /**
+         * Sets the size to extra small
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function extraSmall(){
+            return \Bootstrapper\DropdownButton::extraSmall();
+        }
+        
+        /**
+         * Renders the dropdown button
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\DropdownButton::render();
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\DropdownButton::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\DropdownButton::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Form extends \Bootstrapper\Facades\Form{
+        
+        /**
+         * Create a submit button element.
+         *
+         * @param string|null $value The value of the submit button
+         * @param array $options The options
+         * @return string 
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function submit($value = null, $options = array()){
+            return \Bootstrapper\Form::submit($value, $options);
+        }
+        
+        /**
+         * Create a form label element.
+         *
+         * @param string $name The name of the object this label will be
+         *                             attached to
+         * @param string|null $value The text of the label
+         * @param array $options The options of the label
+         * @return string 
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @param bool $escape_html
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function label($name, $value = null, $options = array(), $escape_html = true){
+            return \Bootstrapper\Form::label($name, $value, $options, $escape_html);
+        }
+        
+        /**
+         * Opens an inline form
+         *
+         * @param array $attributes The attributes of the array
+         * @return string 
+         * @static 
+         */
+        public static function inline($attributes = array()){
+            return \Bootstrapper\Form::inline($attributes);
+        }
+        
+        /**
+         * Opens a horizontal form
+         *
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function horizontal($attributes = array()){
+            return \Bootstrapper\Form::horizontal($attributes);
+        }
+        
+        /**
+         * Creates a validation block
+         *
+         * @param string $type The type of validation
+         * @param string $label The label
+         * @param string $input The input
+         * @param array $attributes The attributes of the validation block
+         * @return string 
+         * @static 
+         */
+        public static function validation($type, $label, $input, $attributes = array()){
+            return \Bootstrapper\Form::validation($type, $label, $input, $attributes);
+        }
+        
+        /**
+         * Creates a success validation block
+         *
+         * @param string $label The label
+         * @param string $input The input
+         * @param array $attributes The attributes of the validation block
+         * @return string 
+         * @see Bootstrapper\\Form::validation()
+         * @static 
+         */
+        public static function success($label, $input, $attributes = array()){
+            return \Bootstrapper\Form::success($label, $input, $attributes);
+        }
+        
+        /**
+         * Creates a warning validation block
+         *
+         * @param string $label The label
+         * @param string $input The input
+         * @param array $attributes The attributes of the validation block
+         * @return string 
+         * @see Bootstrapper\\Form::validation()
+         * @static 
+         */
+        public static function warning($label, $input, $attributes = array()){
+            return \Bootstrapper\Form::warning($label, $input, $attributes);
+        }
+        
+        /**
+         * Creates an error validation block
+         *
+         * @param string $label The label
+         * @param string $input The input
+         * @param array $attributes The attributes of the validation block
+         * @return string 
+         * @see Bootstrapper\\Form::validation()
+         * @static 
+         */
+        public static function error($label, $input, $attributes = array()){
+            return \Bootstrapper\Form::error($label, $input, $attributes);
+        }
+        
+        /**
+         * Creates a feedback block with an icon
+         *
+         * @param string $label The label
+         * @param string $input The input
+         * @param string $icon The icon
+         * @param array $attributes The attributes of the block
+         * @return string 
+         * @static 
+         */
+        public static function feedback($label, $input, $icon, $attributes = array()){
+            return \Bootstrapper\Form::feedback($label, $input, $icon, $attributes);
+        }
+        
+        /**
+         * Creates a help block
+         *
+         * @param string $helpText The help text
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function help($helpText, $attributes = array()){
+            return \Bootstrapper\Form::help($helpText, $attributes);
+        }
+        
+        /**
+         * Opens a horizontal form with a given model
+         *
+         * @param mixed $model
+         * @param array $attributes
+         * @return string 
+         * @see Bootstrapper\Form::horizontal()
+         * @see Illuminate\Html::model()
+         * @static 
+         */
+        public static function horizontalModel($model, $attributes = array()){
+            return \Bootstrapper\Form::horizontalModel($model, $attributes);
+        }
+        
+        /**
+         * Opens a inline form with a given model
+         *
+         * @param mixed $model
+         * @param array $attributes
+         * @return string 
+         * @see Bootstrapper\Form::inline()
+         * @see Illuminate\Html::model()
+         * @static 
+         */
+        public static function inlineModel($model, $attributes = array()){
+            return \Bootstrapper\Form::inlineModel($model, $attributes);
+        }
+        
+        /**
+         * Create a select box field.
+         *
+         * @param string $name
+         * @param array $list
+         * @param null $selected
+         * @param array $attributes
+         * @return string 
+         * @param string $name
+         * @param array $list
+         * @param string $selected
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function select($name, $list = array(), $selected = null, $attributes = array()){
+            return \Bootstrapper\Form::select($name, $list, $selected, $attributes);
+        }
+        
+        /**
+         * Create a textarea input field.
+         *
+         * @param string $name The name of the text area
+         * @param string|null $value The default value
+         * @param array $attributes The attributes of the text area
+         * @return string 
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function textarea($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::textarea($name, $value, $attributes);
+        }
+        
+        /**
+         * Create a password input field.
+         *
+         * @param string $name The name of the password input
+         * @param array $attributes The attributes of the input
+         * @return string 
+         * @param string $name
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function password($name, $attributes = array()){
+            return \Bootstrapper\Form::password($name, $attributes);
+        }
+        
+        /**
+         * Create a text input field.
+         *
+         * @param string $name The name of the text input
+         * @param string|null $value The default value
+         * @param array $attributes The attributes of the input
+         * @return string 
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function text($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::text($name, $value, $attributes);
+        }
+        
+        /**
+         * Create an e-mail input field.
+         *
+         * @param string $name The name of the email input
+         * @param string|null $value The default value of the input
+         * @param array $attributes The attributes of the email input
+         * @return string 
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function email($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::email($name, $value, $attributes);
+        }
+        
+        /**
+         * Creates a datetime form element
+         *
+         * @param string $name The name of the element
+         * @param null $value The value
+         * @param array $attributes The attributes
+         * @return string 
+         * @see Illuminate\FormBuilder\input()
+         * @static 
+         */
+        public static function datetime($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::datetime($name, $value, $attributes);
+        }
+        
+        /**
+         * Creates a datetime local element
+         *
+         * @param string $name The name of the element
+         * @param null $value
+         * @param array $attributes
+         * @return string 
+         * @see Illuminate\FormBuilder\input()
+         * @static 
+         */
+        public static function datetimelocal($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::datetimelocal($name, $value, $attributes);
+        }
+        
+        /**
+         * Creates a date input
+         *
+         * @param string $name The name of the element
+         * @param null $value
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function date($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::date($name, $value, $attributes);
+        }
+        
+        /**
+         * Creates a month input
+         *
+         * @param string $name The name of the element
+         * @param null $value
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function month($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::month($name, $value, $attributes);
+        }
+        
+        /**
+         * Creates a week form element
+         *
+         * @param string $name The name of the element
+         * @param null $value
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function week($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::week($name, $value, $attributes);
+        }
+        
+        /**
+         * Creates a time form element
+         *
+         * @param string $name The name of the element
+         * @param null $value
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function time($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::time($name, $value, $attributes);
+        }
+        
+        /**
+         * Creates a number form element
+         *
+         * @param string $name The name of the element
+         * @param null $value
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function number($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::number($name, $value, $attributes);
+        }
+        
+        /**
+         * Creates a url form element
+         *
+         * @param string $name The name of the element
+         * @param null $value
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function url($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::url($name, $value, $attributes);
+        }
+        
+        /**
+         * Creates a search element
+         *
+         * @param string $name The name of the element
+         * @param null $value
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function search($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::search($name, $value, $attributes);
+        }
+        
+        /**
+         * Creates a tel element
+         *
+         * @param string $name The name of the element
+         * @param null $value
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function tel($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::tel($name, $value, $attributes);
+        }
+        
+        /**
+         * Creates a color element
+         *
+         * @param string $name The name of the element
+         * @param null $value
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function color($name, $value = null, $attributes = array()){
+            return \Bootstrapper\Form::color($name, $value, $attributes);
+        }
+        
+        /**
+         * Determine whether the form element with the given name
+         * has any validation errors.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */
+        public static function hasErrors($name){
+            return \Bootstrapper\Form::hasErrors($name);
+        }
+        
+        /**
+         * Get the formatted errors for the form element with the given name.
+         *
+         * @param string $name
+         * @return string 
+         * @static 
+         */
+        public static function getFormattedError($name){
+            return \Bootstrapper\Form::getFormattedError($name);
+        }
+        
+        /**
+         * Open up a new HTML form.
+         *
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function open($options = array()){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::open($options);
+        }
+        
+        /**
+         * Create a new model based form builder.
+         *
+         * @param mixed $model
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function model($model, $options = array()){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::model($model, $options);
+        }
+        
+        /**
+         * Set the model instance on the form builder.
+         *
+         * @param mixed $model
+         * @return void 
+         * @static 
+         */
+        public static function setModel($model){
+            //Method inherited from \Collective\Html\FormBuilder            
+            \Bootstrapper\Form::setModel($model);
+        }
+        
+        /**
+         * Close the current form.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function close(){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::close();
+        }
+        
+        /**
+         * Generate a hidden field with the current CSRF token.
+         *
+         * @return string 
+         * @static 
+         */
+        public static function token(){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::token();
+        }
+        
+        /**
+         * Create a form input field.
+         *
+         * @param string $type
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function input($type, $name, $value = null, $options = array()){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::input($type, $name, $value, $options);
+        }
+        
+        /**
+         * Create a hidden input field.
+         *
+         * @param string $name
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function hidden($name, $value = null, $options = array()){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::hidden($name, $value, $options);
+        }
+        
+        /**
+         * Create a file input field.
+         *
+         * @param string $name
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function file($name, $options = array()){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::file($name, $options);
+        }
+        
+        /**
+         * Create a select range field.
+         *
+         * @param string $name
+         * @param string $begin
+         * @param string $end
+         * @param string $selected
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function selectRange($name, $begin, $end, $selected = null, $options = array()){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::selectRange($name, $begin, $end, $selected, $options);
+        }
+        
+        /**
+         * Create a select year field.
+         *
+         * @param string $name
+         * @param string $begin
+         * @param string $end
+         * @param string $selected
+         * @param array $options
+         * @return mixed 
+         * @static 
+         */
+        public static function selectYear(){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::selectYear();
+        }
+        
+        /**
+         * Create a select month field.
+         *
+         * @param string $name
+         * @param string $selected
+         * @param array $options
+         * @param string $format
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function selectMonth($name, $selected = null, $options = array(), $format = '%B'){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::selectMonth($name, $selected, $options, $format);
+        }
+        
+        /**
+         * Get the select option for the given value.
+         *
+         * @param string $display
+         * @param string $value
+         * @param string $selected
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function getSelectOption($display, $value, $selected){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::getSelectOption($display, $value, $selected);
+        }
+        
+        /**
+         * Create a checkbox input field.
+         *
+         * @param string $name
+         * @param mixed $value
+         * @param bool $checked
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function checkbox($name, $value = 1, $checked = null, $options = array()){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::checkbox($name, $value, $checked, $options);
+        }
+        
+        /**
+         * Create a radio button input field.
+         *
+         * @param string $name
+         * @param mixed $value
+         * @param bool $checked
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function radio($name, $value = null, $checked = null, $options = array()){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::radio($name, $value, $checked, $options);
+        }
+        
+        /**
+         * Create a HTML reset input element.
+         *
+         * @param string $value
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function reset($value, $attributes = array()){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::reset($value, $attributes);
+        }
+        
+        /**
+         * Create a HTML image input element.
+         *
+         * @param string $url
+         * @param string $name
+         * @param array $attributes
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function image($url, $name = null, $attributes = array()){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::image($url, $name, $attributes);
+        }
+        
+        /**
+         * Create a button element.
+         *
+         * @param string $value
+         * @param array $options
+         * @return \Illuminate\Support\HtmlString 
+         * @static 
+         */
+        public static function button($value = null, $options = array()){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::button($value, $options);
+        }
+        
+        /**
+         * Get the ID attribute for a field name.
+         *
+         * @param string $name
+         * @param array $attributes
+         * @return string 
+         * @static 
+         */
+        public static function getIdAttribute($name, $attributes){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::getIdAttribute($name, $attributes);
+        }
+        
+        /**
+         * Get the value that should be assigned to the field.
+         *
+         * @param string $name
+         * @param string $value
+         * @return mixed 
+         * @static 
+         */
+        public static function getValueAttribute($name, $value = null){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::getValueAttribute($name, $value);
+        }
+        
+        /**
+         * Get a value from the session's old input.
+         *
+         * @param string $name
+         * @return mixed 
+         * @static 
+         */
+        public static function old($name){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::old($name);
+        }
+        
+        /**
+         * Determine if the old input is empty.
+         *
+         * @return bool 
+         * @static 
+         */
+        public static function oldInputIsEmpty(){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::oldInputIsEmpty();
+        }
+        
+        /**
+         * Get the session store implementation.
+         *
+         * @return \Illuminate\Session\SessionInterface $session
+         * @static 
+         */
+        public static function getSessionStore(){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::getSessionStore();
+        }
+        
+        /**
+         * Set the session store implementation.
+         *
+         * @param \Illuminate\Session\SessionInterface $session
+         * @return $this 
+         * @static 
+         */
+        public static function setSessionStore($session){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::setSessionStore($session);
+        }
+        
+        /**
+         * Register a custom macro.
+         *
+         * @param string $name
+         * @param callable $macro
+         * @return void 
+         * @static 
+         */
+        public static function macro($name, $macro){
+            //Method inherited from \Collective\Html\FormBuilder            
+            \Bootstrapper\Form::macro($name, $macro);
+        }
+        
+        /**
+         * Checks if macro is registered.
+         *
+         * @param string $name
+         * @return bool 
+         * @static 
+         */
+        public static function hasMacro($name){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::hasMacro($name);
+        }
+        
+        /**
+         * Dynamically handle calls to the class.
+         *
+         * @param string $method
+         * @param array $parameters
+         * @return mixed 
+         * @throws \BadMethodCallException
+         * @static 
+         */
+        public static function macroCall($method, $parameters){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::macroCall($method, $parameters);
+        }
+        
+        /**
+         * Register a custom component.
+         *
+         * @param $name
+         * @param $view
+         * @param array $signature
+         * @return void 
+         * @static 
+         */
+        public static function component($name, $view, $signature){
+            //Method inherited from \Collective\Html\FormBuilder            
+            \Bootstrapper\Form::component($name, $view, $signature);
+        }
+        
+        /**
+         * Check if a component is registered.
+         *
+         * @param $name
+         * @return bool 
+         * @static 
+         */
+        public static function hasComponent($name){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::hasComponent($name);
+        }
+        
+        /**
+         * Dynamically handle calls to the class.
+         *
+         * @param string $method
+         * @param array $parameters
+         * @return \Illuminate\Contracts\View\View|mixed 
+         * @throws \BadMethodCallException
+         * @static 
+         */
+        public static function componentCall($method, $parameters){
+            //Method inherited from \Collective\Html\FormBuilder            
+            return \Bootstrapper\Form::componentCall($method, $parameters);
+        }
+        
+    }
+
+
+    class Boostrap_Helpers extends \Bootstrapper\Facades\Helpers{
+        
+        /**
+         * Slugifies a string
+         *
+         * @param string $string
+         * @return mixed 
+         * @static 
+         */
+        public static function slug($string){
+            return \Bootstrapper\Helpers::slug($string);
+        }
+        
+        /**
+         * Outputs a link to the Bootstrap CDN
+         *
+         * @param bool $withTheme Gets the bootstrap theme as well
+         * @return string 
+         * @static 
+         */
+        public static function css($withTheme = true){
+            return \Bootstrapper\Helpers::css($withTheme);
+        }
+        
+        /**
+         * Outputs a link to the Jquery and Bootstrap CDN
+         *
+         * @return string 
+         * @static 
+         */
+        public static function js(){
+            return \Bootstrapper\Helpers::js();
+        }
+        
+        /**
+         * Generate an id of the form "x-class-name-x". These should always be
+         * unique.
+         *
+         * @param \Bootstrapper\RenderedObject $caller The object that called this
+         * @return string A unique id
+         * @static 
+         */
+        public static function generateId($caller){
+            return \Bootstrapper\Helpers::generateId($caller);
+        }
+        
+    }
+
+
+    class Boostrap_Icon extends \Bootstrapper\Facades\Icon{
+        
+        /**
+         * Renders the object
+         *
+         * @return string 
+         * @throws IconException
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Icon::render();
+        }
+        
+        /**
+         * Creates a span link with the correct icon link
+         *
+         * @param string $icon The icon name
+         * @return string 
+         * @static 
+         */
+        public static function create($icon){
+            return \Bootstrapper\Icon::create($icon);
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Icon::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Icon::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_InputGroup extends \Bootstrapper\Facades\InputGroup{
+        
+        /**
+         * Renders the input group
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\InputGroup::render();
+        }
+        
+        /**
+         * Sets the contents of the input group
+         *
+         * @param string $contents The new contents
+         * @return $this 
+         * @static 
+         */
+        public static function withContents($contents){
+            return \Bootstrapper\InputGroup::withContents($contents);
+        }
+        
+        /**
+         * Sets the size of the input group
+         *
+         * @param string $size The new size
+         * @return $this 
+         * @static 
+         */
+        public static function setSize($size){
+            return \Bootstrapper\InputGroup::setSize($size);
+        }
+        
+        /**
+         * Prepends something to the input
+         *
+         * @param string $prepend The value to prepend
+         * @param bool $isButton Whether the value is a button
+         * @return $this 
+         * @static 
+         */
+        public static function prepend($prepend, $isButton = false){
+            return \Bootstrapper\InputGroup::prepend($prepend, $isButton);
+        }
+        
+        /**
+         * Prepend a button
+         *
+         * @param string $button The button to prepend
+         * @return $this 
+         * @static 
+         */
+        public static function prependButton($button){
+            return \Bootstrapper\InputGroup::prependButton($button);
+        }
+        
+        /**
+         * Appends something to the input
+         *
+         * @param string $append The value to append
+         * @param bool $isButton Whether the value is a button
+         * @return $this 
+         * @static 
+         */
+        public static function append($append, $isButton = false){
+            return \Bootstrapper\InputGroup::append($append, $isButton);
+        }
+        
+        /**
+         * Append a button
+         *
+         * @param string $button The button to append
+         * @return $this 
+         * @static 
+         */
+        public static function appendButton($button){
+            return \Bootstrapper\InputGroup::appendButton($button);
+        }
+        
+        /**
+         * Makes the input group large
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function large(){
+            return \Bootstrapper\InputGroup::large();
+        }
+        
+        /**
+         * Makes the input group small
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function small(){
+            return \Bootstrapper\InputGroup::small();
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\InputGroup::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\InputGroup::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Image extends \Bootstrapper\Facades\Image{
+        
+        /**
+         * Renders the image
+         *
+         * @return string 
+         * @throws ImageException If the image source is not set
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Image::render();
+        }
+        
+        /**
+         * Sets the source of the image
+         *
+         * @param string $source The source of the image
+         * @return $this 
+         * @static 
+         */
+        public static function withSource($source){
+            return \Bootstrapper\Image::withSource($source);
+        }
+        
+        /**
+         * Sets the alt text of the image
+         *
+         * @param string $alt The alt text of the image
+         * @return $this 
+         * @static 
+         */
+        public static function withAlt($alt){
+            return \Bootstrapper\Image::withAlt($alt);
+        }
+        
+        /**
+         * Sets the image to be responsive
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function responsive(){
+            return \Bootstrapper\Image::responsive();
+        }
+        
+        /**
+         * Creates a rounded image
+         *
+         * @param null|string $src The source of the image. Pass null to use the
+         *                         previous value of the source
+         * @param null|string $alt The alt text of the image. Pass null to use
+         *                         the previous value
+         * @return $this 
+         * @static 
+         */
+        public static function rounded($src = null, $alt = null){
+            return \Bootstrapper\Image::rounded($src, $alt);
+        }
+        
+        /**
+         * Creates a circle image
+         *
+         * @param null|string $src The source of the image. Pass null to use the
+         *                         previous value of the source
+         * @param null|string $alt The alt text of the image. Pass null to use
+         *                         the previous value
+         * @return $this 
+         * @static 
+         */
+        public static function circle($src = null, $alt = null){
+            return \Bootstrapper\Image::circle($src, $alt);
+        }
+        
+        /**
+         * Creates a thumbnail image
+         *
+         * @param null|string $src The source of the image. Pass null to use the
+         *                         previous value of the source
+         * @param null|string $alt The alt text of the image. Pass null to use
+         *                         the previous value
+         * @return $this 
+         * @static 
+         */
+        public static function thumbnail($src = null, $alt = null){
+            return \Bootstrapper\Image::thumbnail($src, $alt);
+        }
+        
+        /**
+         * BC version of Image::addClass()
+         *
+         * @param string|array $class
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($class){
+            return \Bootstrapper\Image::addClass($class);
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Image::withAttributes($attributes);
+        }
+        
+    }
+
+
+    class Boostrap_Label extends \Bootstrapper\Facades\Label{
+        
+        /**
+         * Renders the label
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Label::render();
+        }
+        
+        /**
+         * Sets the contents of the label
+         *
+         * @param string $contents The new contents of the label
+         * @return $this 
+         * @static 
+         */
+        public static function withContents($contents){
+            return \Bootstrapper\Label::withContents($contents);
+        }
+        
+        /**
+         * Sets the type of the label. Assumes that the label- prefix is already set
+         *
+         * @param string $type The new type
+         * @return $this 
+         * @static 
+         */
+        public static function setType($type){
+            return \Bootstrapper\Label::setType($type);
+        }
+        
+        /**
+         * Creates a primary label
+         *
+         * @param string $contents The contents of the label
+         * @return $this 
+         * @static 
+         */
+        public static function primary($contents = ''){
+            return \Bootstrapper\Label::primary($contents);
+        }
+        
+        /**
+         * Creates a success label
+         *
+         * @param string $contents The contents of the label
+         * @return $this 
+         * @static 
+         */
+        public static function success($contents = ''){
+            return \Bootstrapper\Label::success($contents);
+        }
+        
+        /**
+         * Creates an info label
+         *
+         * @param string $contents The contents of the label
+         * @return $this 
+         * @static 
+         */
+        public static function info($contents = ''){
+            return \Bootstrapper\Label::info($contents);
+        }
+        
+        /**
+         * Creates a warning label
+         *
+         * @param string $contents The contents of the label
+         * @return $this 
+         * @static 
+         */
+        public static function warning($contents = ''){
+            return \Bootstrapper\Label::warning($contents);
+        }
+        
+        /**
+         * Creates a danger label
+         *
+         * @param string $contents The contents of the label
+         * @return $this 
+         * @static 
+         */
+        public static function danger($contents = ''){
+            return \Bootstrapper\Label::danger($contents);
+        }
+        
+        /**
+         * Creates a label
+         *
+         * @param string $contents The contents of the label
+         * @param string $type The type to use
+         * @return $this 
+         * @static 
+         */
+        public static function create($contents, $type = 'label-default'){
+            return \Bootstrapper\Label::create($contents, $type);
+        }
+        
+        /**
+         * Creates a normal label
+         *
+         * @param string $contents The contents of the label
+         * @return $this 
+         * @static 
+         */
+        public static function normal($contents = ''){
+            return \Bootstrapper\Label::normal($contents);
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Label::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Label::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_MediaObject extends \Bootstrapper\Facades\MediaObject{
+        
+        /**
+         * Renders the media object
+         *
+         * @return string 
+         * @throws MediaObjectException if there is no contents
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\MediaObject::render();
+        }
+        
+        /**
+         * Sets the contents of the media object
+         *
+         * @param array $contents The contents of the media object
+         * @return $this 
+         * @static 
+         */
+        public static function withContents($contents){
+            return \Bootstrapper\MediaObject::withContents($contents);
+        }
+        
+        /**
+         * Force the media object to become a list
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function asList(){
+            return \Bootstrapper\MediaObject::asList();
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\MediaObject::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\MediaObject::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Modal extends \Bootstrapper\Facades\Modal{
+        
+        /**
+         * Renders the modal
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Modal::render();
+        }
+        
+        /**
+         * Sets the title of the modal
+         *
+         * @param string $title
+         * @return $this 
+         * @static 
+         */
+        public static function withTitle($title){
+            return \Bootstrapper\Modal::withTitle($title);
+        }
+        
+        /**
+         * Sets the body of the modal
+         *
+         * @param string $body The new body of the modal
+         * @return $this 
+         * @static 
+         */
+        public static function withBody($body){
+            return \Bootstrapper\Modal::withBody($body);
+        }
+        
+        /**
+         * Set the footer of the modal
+         *
+         * @param string $footer The footer
+         * @return $this 
+         * @static 
+         */
+        public static function withFooter($footer){
+            return \Bootstrapper\Modal::withFooter($footer);
+        }
+        
+        /**
+         * Sets the name of the modal
+         *
+         * @param string $name The name of the modal
+         * @return $this 
+         * @static 
+         */
+        public static function named($name){
+            return \Bootstrapper\Modal::named($name);
+        }
+        
+        /**
+         * Sets the button
+         *
+         * @param \Bootstrapper\Button $button The button to open the modal with
+         * @return $this 
+         * @static 
+         */
+        public static function withButton($button = null){
+            return \Bootstrapper\Modal::withButton($button);
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Modal::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Modal::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Navbar extends \Bootstrapper\Facades\Navbar{
+        
+        /**
+         * Renders the navbar
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Navbar::render();
+        }
+        
+        /**
+         * Sets the brand of the navbar
+         *
+         * @param string $brand The brand
+         * @param null|string $link The link. If not set we default to linking to
+         *                           '/' using the UrlGenerator
+         * @return $this 
+         * @static 
+         */
+        public static function withBrand($brand, $link = null){
+            return \Bootstrapper\Navbar::withBrand($brand, $link);
+        }
+        
+        /**
+         * Sets the brand of the navbar
+         *
+         * @param string $image The brand image
+         * @param null|string $link The link. If not set we default to linking to
+         *                             '/' using the UrlGenerator
+         * @param string $altText The alt text for the image
+         * @return $this 
+         * @static 
+         */
+        public static function withBrandImage($image, $link = null, $altText = ''){
+            return \Bootstrapper\Navbar::withBrandImage($image, $link, $altText);
+        }
+        
+        /**
+         * Adds some content to the navbar
+         *
+         * @param mixed $content Anything that can become a string! If you pass in a
+         *                       Bootstrapper\Navigation object we'll make sure
+         *                       it's a navbar on render.
+         * @return $this 
+         * @static 
+         */
+        public static function withContent($content){
+            return \Bootstrapper\Navbar::withContent($content);
+        }
+        
+        /**
+         * Sets the navbar to be inverse
+         *
+         * @param string $position
+         * @param array $attributes
+         * @return $this 
+         * @static 
+         */
+        public static function inverse($position = null, $attributes = array()){
+            return \Bootstrapper\Navbar::inverse($position, $attributes);
+        }
+        
+        /**
+         * Sets the position to top
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function staticTop(){
+            return \Bootstrapper\Navbar::staticTop();
+        }
+        
+        /**
+         * Sets the type of the navbar
+         *
+         * @param string $type The type of the navbar. Assumes that the navbar-
+         *                     prefix is there
+         * @return $this 
+         * @static 
+         */
+        public static function setType($type){
+            return \Bootstrapper\Navbar::setType($type);
+        }
+        
+        /**
+         * Sets the position of the navbar
+         *
+         * @param string $position The position of the navbar. Assumes that the
+         *                         navbar- prefix is there
+         * @return $this 
+         * @static 
+         */
+        public static function setPosition($position){
+            return \Bootstrapper\Navbar::setPosition($position);
+        }
+        
+        /**
+         * Sets the position of the navbar to the top
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function top(){
+            return \Bootstrapper\Navbar::top();
+        }
+        
+        /**
+         * Sets the position of the navbar to the bottom
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function bottom(){
+            return \Bootstrapper\Navbar::bottom();
+        }
+        
+        /**
+         * Creates a navbar with a position and attributes
+         *
+         * @param string $position The position of the navbar
+         * @param array $attributes The attributes of the navbar
+         * @return $this 
+         * @static 
+         */
+        public static function create($position, $attributes = array()){
+            return \Bootstrapper\Navbar::create($position, $attributes);
+        }
+        
+        /**
+         * Sets the navbar to be fluid
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function fluid(){
+            return \Bootstrapper\Navbar::fluid();
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Navbar::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Navbar::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Navigation extends \Bootstrapper\Facades\Navigation{
+        
+        /**
+         * Renders the navigation object
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Navigation::render();
+        }
+        
+        /**
+         * Creates a pills navigation block
+         *
+         * @param array $links The links
+         * @param array $attributes The attributes. Does not overwrite the
+         *                          previous values if not set
+         * @see Bootstrapper\Navigatation::$links
+         * @return $this 
+         * @static 
+         */
+        public static function pills($links = array(), $attributes = null){
+            return \Bootstrapper\Navigation::pills($links, $attributes);
+        }
+        
+        /**
+         * Sets the links of the navigation object
+         *
+         * @param array $links The links
+         * @return $this 
+         * @see Bootstrapper\Navigation::$links
+         * @static 
+         */
+        public static function links($links){
+            return \Bootstrapper\Navigation::links($links);
+        }
+        
+        /**
+         * Creates a navigation tab object.
+         *
+         * @param array $links The links to be passed in
+         * @param array $attributes The attributes of the navigation object. Will
+         *                          overwrite unless not set.
+         * @return $this 
+         * @static 
+         */
+        public static function tabs($links = array(), $attributes = null){
+            return \Bootstrapper\Navigation::tabs($links, $attributes);
+        }
+        
+        /**
+         * Sets the autorouting. Pass false to turn it off, true to turn it on
+         *
+         * @param bool $autoroute Whether the autorouting should be on
+         * @return $this 
+         * @static 
+         */
+        public static function autoroute($autoroute){
+            return \Bootstrapper\Navigation::autoroute($autoroute);
+        }
+        
+        /**
+         * Turns the navigation object into one for navbars
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function navbar(){
+            return \Bootstrapper\Navigation::navbar();
+        }
+        
+        /**
+         * Makes the navigation links justified
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function justified(){
+            return \Bootstrapper\Navigation::justified();
+        }
+        
+        /**
+         * Makes the navigation stacked
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function stacked(){
+            return \Bootstrapper\Navigation::stacked();
+        }
+        
+        /**
+         * Makes the navigation links float right
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function right(){
+            return \Bootstrapper\Navigation::right();
+        }
+        
+        /**
+         * Makes the navigation links float left
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function left(){
+            return \Bootstrapper\Navigation::left();
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Navigation::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Navigation::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Panel extends \Bootstrapper\Facades\Panel{
+        
+        /**
+         * Renders the panel
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Panel::render();
+        }
+        
+        /**
+         * Creates a primary panel
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function primary(){
+            return \Bootstrapper\Panel::primary();
+        }
+        
+        /**
+         * Creates a success panel
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function success(){
+            return \Bootstrapper\Panel::success();
+        }
+        
+        /**
+         * Creates an info panel
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function info(){
+            return \Bootstrapper\Panel::info();
+        }
+        
+        /**
+         * Creates an warning panel
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function warning(){
+            return \Bootstrapper\Panel::warning();
+        }
+        
+        /**
+         * Creates an danger panel
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function danger(){
+            return \Bootstrapper\Panel::danger();
+        }
+        
+        /**
+         * Sets the type of the panel
+         *
+         * @param string $type The new type. Assume the panel- prefix
+         * @return $this 
+         * @static 
+         */
+        public static function setType($type){
+            return \Bootstrapper\Panel::setType($type);
+        }
+        
+        /**
+         * Sets the header of the panel
+         *
+         * @param string $header The header
+         * @return $this 
+         * @static 
+         */
+        public static function withHeader($header){
+            return \Bootstrapper\Panel::withHeader($header);
+        }
+        
+        /**
+         * Sets the body of the panel
+         *
+         * @param string $body The body
+         * @return $this 
+         * @static 
+         */
+        public static function withBody($body){
+            return \Bootstrapper\Panel::withBody($body);
+        }
+        
+        /**
+         * Sets the table of the panel
+         *
+         * @param string|\Bootstrapper\Table $table The table
+         * @return $this 
+         * @static 
+         */
+        public static function withTable($table){
+            return \Bootstrapper\Panel::withTable($table);
+        }
+        
+        /**
+         * Sets the footer
+         *
+         * @param string $footer The new footer
+         * @return $this 
+         * @static 
+         */
+        public static function withFooter($footer){
+            return \Bootstrapper\Panel::withFooter($footer);
+        }
+        
+        /**
+         * Creates a normal panel
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function normal(){
+            return \Bootstrapper\Panel::normal();
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Panel::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Panel::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_ProgressBar extends \Bootstrapper\Facades\ProgressBar{
+        
+        /**
+         * Renders the progress bar
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\ProgressBar::render();
+        }
+        
+        /**
+         * Sets the type of the progress bar
+         *
+         * @param string $type The type
+         * @return $this 
+         * @static 
+         */
+        public static function setType($type){
+            return \Bootstrapper\ProgressBar::setType($type);
+        }
+        
+        /**
+         * Sets the value of the progress bar
+         *
+         * @param int $value The value of the progress bar The value of the
+         *                   progress bar
+         * @return $this 
+         * @static 
+         */
+        public static function value($value){
+            return \Bootstrapper\ProgressBar::value($value);
+        }
+        
+        /**
+         * Whether the amount should be visible
+         *
+         * @param string $string The string to show to the user. We internally
+         *                       will use sprintf to show this, so you must
+         *                       include a %s somewhere so we can add this in
+         * @return $this 
+         * @static 
+         */
+        public static function visible($string = '%s%%'){
+            return \Bootstrapper\ProgressBar::visible($string);
+        }
+        
+        /**
+         * Creates a success progress bar
+         *
+         * @param int $value The value of the progress bar
+         * @return $this 
+         * @static 
+         */
+        public static function success($value = 0){
+            return \Bootstrapper\ProgressBar::success($value);
+        }
+        
+        /**
+         * Creates an info progress bar
+         *
+         * @param int $value The value of the progress bar
+         * @return $this 
+         * @static 
+         */
+        public static function info($value = 0){
+            return \Bootstrapper\ProgressBar::info($value);
+        }
+        
+        /**
+         * Creates a warning progress bar
+         *
+         * @param int $value The value of the progress bar
+         * @return $this 
+         * @static 
+         */
+        public static function warning($value = 0){
+            return \Bootstrapper\ProgressBar::warning($value);
+        }
+        
+        /**
+         * Creates a danger progress bar
+         *
+         * @param int $value The value of the progress bar
+         * @return $this 
+         * @static 
+         */
+        public static function danger($value = 0){
+            return \Bootstrapper\ProgressBar::danger($value);
+        }
+        
+        /**
+         * Creates a normal progress bar
+         *
+         * @param int $value The value of the progress bar
+         * @return $this 
+         * @static 
+         */
+        public static function normal($value = 0){
+            return \Bootstrapper\ProgressBar::normal($value);
+        }
+        
+        /**
+         * Sets the progress bar to be striped
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function striped(){
+            return \Bootstrapper\ProgressBar::striped();
+        }
+        
+        /**
+         * Sets the progress bar to be animated
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function animated(){
+            return \Bootstrapper\ProgressBar::animated();
+        }
+        
+        /**
+         * Stacks several progress bars together
+         *
+         * @param array $items The progress bars. Should be an array of arrays,
+         *                     which are a list of methods and parameters.
+         * @return string 
+         * @static 
+         */
+        public static function stack($items){
+            return \Bootstrapper\ProgressBar::stack($items);
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\ProgressBar::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\ProgressBar::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Tabbable extends \Bootstrapper\Facades\Tabbable{
+        
+        /**
+         * Renders the tabbable object
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Tabbable::render();
+        }
+        
+        /**
+         * Creates content with a tabbed navigation
+         *
+         * @param array $contents The content
+         * @return $this 
+         * @see Bootstrapper\Navigation::$contents
+         * @static 
+         */
+        public static function tabs($contents = array()){
+            return \Bootstrapper\Tabbable::tabs($contents);
+        }
+        
+        /**
+         * Creates content with a pill navigation
+         *
+         * @param array $contents
+         * @return $this 
+         * @see Bootstrapper\Navigation::$contents
+         * @static 
+         */
+        public static function pills($contents = array()){
+            return \Bootstrapper\Tabbable::pills($contents);
+        }
+        
+        /**
+         * Sets the contents
+         *
+         * @param array $contents An array of arrays
+         * @return $this 
+         * @see Bootstrapper\Navigation::$contents
+         * @static 
+         */
+        public static function withContents($contents){
+            return \Bootstrapper\Tabbable::withContents($contents);
+        }
+        
+        /**
+         * Sets which tab should be active
+         *
+         * @param int $active
+         * @return $this 
+         * @static 
+         */
+        public static function active($active){
+            return \Bootstrapper\Tabbable::active($active);
+        }
+        
+        /**
+         * Sets the tabbable objects to fade in
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function fade(){
+            return \Bootstrapper\Tabbable::fade();
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Tabbable::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Tabbable::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Table extends \Bootstrapper\Facades\Table{
+        
+        /**
+         * Renders the table
+         *
+         * @return string 
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Table::render();
+        }
+        
+        /**
+         * Sets the table to be striped
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function striped(){
+            return \Bootstrapper\Table::striped();
+        }
+        
+        /**
+         * Sets the table to be bordered
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function bordered(){
+            return \Bootstrapper\Table::bordered();
+        }
+        
+        /**
+         * Sets the table to have an active hover state
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function hover(){
+            return \Bootstrapper\Table::hover();
+        }
+        
+        /**
+         * Sets the table to be condensed
+         *
+         * @return $this 
+         * @static 
+         */
+        public static function condensed(){
+            return \Bootstrapper\Table::condensed();
+        }
+        
+        /**
+         * Sets the contents of the table
+         *
+         * @param array|\Bootstrapper\Traversable $contents The contents of the table. We expect
+         *                                    either an array of arrays or an
+         *                                    array of eloquent models
+         * @return $this 
+         * @static 
+         */
+        public static function withContents($contents){
+            return \Bootstrapper\Table::withContents($contents);
+        }
+        
+        /**
+         * Creates a list of columns to ignore
+         *
+         * @param array $ignores The ignored columns
+         * @return $this 
+         * @static 
+         */
+        public static function ignore($ignores){
+            return \Bootstrapper\Table::ignore($ignores);
+        }
+        
+        /**
+         * Adds a callback
+         *
+         * @param string $index The column name for the callback
+         * @param callable $function The callback function,
+         *                           which should be of the form
+         *                           function($column, $row).
+         * @return $this 
+         * @static 
+         */
+        public static function callback($index, $function){
+            return \Bootstrapper\Table::callback($index, $function);
+        }
+        
+        /**
+         * Sets which columns we can return
+         *
+         * @param array $only
+         * @return $this 
+         * @static 
+         */
+        public static function only($only){
+            return \Bootstrapper\Table::only($only);
+        }
+        
+        /**
+         * Sets content to be rendered in to the table footer
+         *
+         * @param string $footer
+         * @return $this 
+         * @static 
+         */
+        public static function withFooter($footer){
+            return \Bootstrapper\Table::withFooter($footer);
+        }
+        
+        /**
+         * Uses given class(es) on body TDs.
+         *
+         * @param mixed $classes The class(es) to apply.
+         * @return $this 
+         * @static 
+         */
+        public static function withBodyCellClass($classes){
+            return \Bootstrapper\Table::withBodyCellClass($classes);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */
+        public static function withClassOnCellsInColumn($columns, $classes){
+            return \Bootstrapper\Table::withClassOnCellsInColumn($columns, $classes);
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Table::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Table::addClass($classes);
+        }
+        
+    }
+
+
+    class Boostrap_Thumbnail extends \Bootstrapper\Facades\Thumbnail{
+        
+        /**
+         * Renders the thumbnail
+         *
+         * @return string 
+         * @throws ThumbnailException if the image is not specified
+         * @static 
+         */
+        public static function render(){
+            return \Bootstrapper\Thumbnail::render();
+        }
+        
+        /**
+         * Sets the image for the thumbnail
+         *
+         * @param string $image The image source
+         * @param array $attributes The attributes
+         * @return $this 
+         * @static 
+         */
+        public static function image($image, $attributes = array()){
+            return \Bootstrapper\Thumbnail::image($image, $attributes);
+        }
+        
+        /**
+         * Sets the caption for the thumbnail
+         *
+         * @param string $caption The new caption
+         * @return $this 
+         * @static 
+         */
+        public static function caption($caption){
+            return \Bootstrapper\Thumbnail::caption($caption);
+        }
+        
+        /**
+         * Set the attributes of the object
+         *
+         * @param array $attributes The attributes to use
+         * @return $this 
+         * @static 
+         */
+        public static function withAttributes($attributes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Thumbnail::withAttributes($attributes);
+        }
+        
+        /**
+         * Adds the given classes to attributes
+         *
+         * @param array $classes
+         * @return $this 
+         * @static 
+         */
+        public static function addClass($classes){
+            //Method inherited from \Bootstrapper\RenderedObject            
+            return \Bootstrapper\Thumbnail::addClass($classes);
+        }
+        
+    }
+
+
+    class Datatables extends \Yajra\Datatables\Facades\Datatables{
+        
+        /**
+         * Gets query and returns instance of class.
+         *
+         * @param mixed $builder
+         * @return mixed 
+         * @static 
+         */
+        public static function of($builder){
+            return \Yajra\Datatables\Datatables::of($builder);
+        }
+        
+        /**
+         * Datatables using Query Builder.
+         *
+         * @param \Illuminate\Database\Query\Builder $builder
+         * @return \Yajra\Datatables\Engines\QueryBuilderEngine 
+         * @static 
+         */
+        public static function usingQueryBuilder($builder){
+            return \Yajra\Datatables\Datatables::usingQueryBuilder($builder);
+        }
+        
+        /**
+         * Datatables using Collection.
+         *
+         * @param \Illuminate\Support\Collection $builder
+         * @return \Yajra\Datatables\Engines\CollectionEngine 
+         * @static 
+         */
+        public static function usingCollection($builder){
+            return \Yajra\Datatables\Datatables::usingCollection($builder);
+        }
+        
+        /**
+         * Datatables using Eloquent.
+         *
+         * @param mixed $builder
+         * @return \Yajra\Datatables\Engines\EloquentEngine 
+         * @static 
+         */
+        public static function usingEloquent($builder){
+            return \Yajra\Datatables\Datatables::usingEloquent($builder);
+        }
+        
+        /**
+         * Get html builder class.
+         *
+         * @return \Yajra\Datatables\Html\Builder 
+         * @static 
+         */
+        public static function getHtmlBuilder(){
+            return \Yajra\Datatables\Datatables::getHtmlBuilder();
+        }
+        
+        /**
+         * Get request object.
+         *
+         * @return \Yajra\Datatables\Request|static 
+         * @static 
+         */
+        public static function getRequest(){
+            return \Yajra\Datatables\Datatables::getRequest();
         }
         
     }
