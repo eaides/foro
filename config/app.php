@@ -179,6 +179,11 @@ return [
         Dimsav\Translatable\TranslatableServiceProvider::class,
         Mariuzzo\LaravelJsLocalization\LaravelJsLocalizationServiceProvider::class,
         Yajra\Datatables\DatatablesServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,
+        Barryvdh\Snappy\ServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
+        Cornford\Googlmapper\MapperServiceProvider::class,
         //
 
         /*
@@ -244,6 +249,11 @@ return [
         'DBAL'          => Nayjest\LaravelDoctrineDBAL\Facade::class,
         'Recaptcha'     => Greggilbert\Recaptcha\Facades\Recaptcha::class,
         'Gravatar'      => Creativeorange\Gravatar\Facades\Gravatar::class,
+        'PDF'           => Barryvdh\DomPDF\Facade::class,
+        'PDFSnappy'     => Barryvdh\Snappy\Facades\SnappyPdf::class,
+        'SnappyImage'   => Barryvdh\Snappy\Facades\SnappyImage::class,
+        'Image'         => Intervention\Image\Facades\Image::class,
+        'Mapper'        => Cornford\Googlmapper\Facades\MapperFacade::class,
 
         'Boostrap_Accordion'        => Bootstrapper\Facades\Accordion::class,
         'Boostrap_Alert'            => Bootstrapper\Facades\Alert::class,
